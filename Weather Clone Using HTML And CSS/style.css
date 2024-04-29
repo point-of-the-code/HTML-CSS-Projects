@@ -1,0 +1,135 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+  background-color: #212121;
+}
+
+.cardm {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 46.64%;
+  left: 50%;
+}
+
+.card {
+  position: absolute;
+  width: 250px;
+  height: 130px;
+  border-radius: 25px;
+  background: whitesmoke;
+  color: black;
+  z-index: 2;
+  transition: .4s ease-in-out;
+}
+
+.weather {
+  position: relative;
+  margin: 1em;
+}
+
+.main {
+  font-size: 2em;
+  position: relative;
+  top: -3em;
+  left: 4.3em;
+}
+
+.mainsub {
+  position: relative;
+  top: -10.2em;
+  left: 14em;
+  font-size: 0.6em;
+}
+
+.card2 {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  width: 240px;
+  height: 130px;
+  border-radius: 35px;
+  background: white;
+  z-index: -1;
+  transition: .4s ease-in-out;
+}
+
+.card:hover {
+  background-color: #FFE87C;
+  cursor: pointer;
+}
+
+.card:hover + .card2 {
+  height: 300px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.card:hover + .card2 .lower {
+  top: 20.2em;
+}
+
+.upper {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  color: black;
+  left: 1.8em;
+  top: 0.5em;
+  gap: 4em;
+}
+
+.humiditytext {
+  position: relative;
+  left: 3.6em;
+  top: 2.7em;
+  font-size: 0.6em;
+}
+
+.airtext {
+  position: relative;
+  left: 3.8em;
+  top: 2.7em;
+  font-size: 0.6em;
+}
+
+.lower {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  text-align: center;
+  color: black;
+  left: 3em;
+  top: 1em;
+  margin-top: 0.7em;
+  font-size: 0.7em;
+  transition: .4s ease-in-out;
+}
+
+.aqi {
+  margin-right: 3.25em;
+}
+
+.realfeel {
+  margin-right: 1.8em;
+}
+
+.card3 {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 240px;
+  height: 30px;
+  top: 4.7em;
+  left: -2.4em;
+  font-size: 1.24em;
+  border-bottom-left-radius: 35px;
+  border-bottom-right-radius: 35px;
+  background: limegreen;
+  transition: .4s ease-in-out;
+}
