@@ -1,0 +1,173 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #313131;
+}
+
+.circle {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  top: 65px;
+  left: 100px;
+  background: #354a5f;
+  border-radius: 50%;
+}
+
+.icon {
+  position: absolute;
+  z-index: 2;
+  top: 130px;
+  left: 140px;
+  transform: translate3d(0, 0, 0);
+  fill: none;
+  stroke-width: 2px;
+  stroke: #ecf0f1;
+  stroke-linecap: square;
+  stroke-dasharray: 325 325;
+
+  &.mail {
+    width: 120px;
+    height: 70px;
+    stroke-dashoffset: 0;
+  }
+
+  &.plane {
+    width: 120px;
+    height: 110px;
+    stroke-dashoffset: 325;
+  }
+}
+
+#cb {
+  display: none;
+}
+
+.button {
+  position: absolute;
+  z-index: 10;
+  width: 200px;
+  height: 40px;
+  top: 290px;
+  left: 100px;
+  background: #ecf0f1;
+  color: #2c3e50;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 15px;
+  cursor: pointer;
+
+  &.reset {
+    opacity: 0;
+    z-index: 5;
+  }
+
+  &:hover {
+    background: #1abc9c;
+    color: #fff;
+  }
+}
+
+#cb:checked ~ .button {
+  animation: button 1.5s ease-in-out 1.7s;
+  animation-fill-mode: both;
+}
+#cb:checked ~ .reset {
+  animation: reset 1s ease-in-out 3.7s;
+  animation-fill-mode: both;
+}
+
+#cb:checked ~ .circle {
+  animation: circle 1s ease-in-out;
+  animation-fill-mode: both;
+}
+
+#cb:checked ~ .circle-outer {
+  animation: circle 0.8s ease-in-out 0.2s;
+  animation-fill-mode: both;
+}
+
+#cb:checked ~ .mail {
+  stroke-dashoffset: 326;
+  transition: stroke-dashoffset 1s ease-in-out;
+}
+
+#cb:checked ~ .plane {
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 1s ease-in-out 0.6s;
+  animation: fly 2.4s ease-in-out;
+  animation-fill-mode: both;
+}
+
+@keyframes fly {
+  0%,
+  50% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  60% {
+    transform: translate3d(-10px, 5px, 0) scale(1.05);
+  }
+  70% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 0;
+  }
+  100% {
+    transform: translate3d(300px, -150px, 0) scale(0.4);
+    opacity: 0;
+  }
+}
+
+@keyframes circle {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  20% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+@keyframes button {
+  0% {
+    transform: scale(1);
+  }
+  30% {
+    background: #1abc9c;
+    color: transparent;
+    width: 200px;
+    left: 100px;
+  }
+  50%,
+  60% {
+    width: 40px;
+    left: 180px;
+    transform: scale(1);
+  }
+  70% {
+    transform: scale(1.1);
+  }
+  100% {
+    width: 40px;
+    left: 180px;
+    background: #1abc9c;
+    color: transparent;
+    transform: scale(0);
+  }
+}
+
+@keyframes reset {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
