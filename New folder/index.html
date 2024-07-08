@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        /* background: #1c7d20; */
+        /* background: #525a61; */
+        width: 100%;
+        height: 100%;
+        /* Add your background pattern here */
+        background-color: #313131;
+        background-image: radial-gradient(
+          rgba(255, 255, 255, -0.829) 2px,
+          transparent 0
+        );
+        background-size: 30px 30px;
+        background-position: -5px -5px;
+      }
+      .code-editor {
+        width: 100%;
+        max-width: 300px;
+        background-color: #1d1e22;
+        /* box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.5); */
+        border-radius: 8px;
+        padding: 2px;
+      }
+
+      .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 10px;
+        position: relative;
+      }
+
+      .title {
+        font-family: Lato, sans-serif;
+        font-weight: 900;
+        font-size: 14px;
+        letter-spacing: 1.57px;
+        color: rgb(212 212 212);
+      }
+
+      .icon {
+        width: 20px;
+        transition: 0.2s ease;
+      }
+
+      .icon:hover {
+        cursor: pointer;
+        border-radius: 50px;
+        background-color: #6e7281;
+      }
+
+      .editor-content {
+        margin: 0 10px 10px;
+        color: white;
+      }
+
+      .property {
+        margin-left: 30px;
+      }
+
+      .terminal-controls {
+        position: absolute;
+        left: 65px;
+        display: flex;
+        gap: 7px;
+      }
+
+      .control {
+        display: inline-block;
+        width: 11px;
+        height: 11px;
+        border-radius: 50%;
+        background-color: #777;
+      }
+
+      .control.close {
+        background-color: #e33;
+      }
+
+      .control.minimize {
+        background-color: #ee0;
+      }
+
+      .control.maximize {
+        background-color: #0b0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="code-editor">
+      <div class="header">
+        <span class="title">CSS</span>
+        <div class="terminal-controls">
+          <div class="control close"></div>
+          <div class="control minimize"></div>
+          <div class="control maximize"></div>
+        </div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          class="icon"
+        >
+          <g stroke-width="0" id="SVGRepo_bgCarrier"></g>
+          <g
+            stroke-linejoin="round"
+            stroke-linecap="round"
+            id="SVGRepo_tracerCarrier"
+          ></g>
+          <g id="SVGRepo_iconCarrier">
+            <path
+              stroke-linecap="round"
+              stroke-width="2"
+              stroke="#4C4F5A"
+              d="M6 6L18 18"
+            ></path>
+            <path
+              stroke-linecap="round"
+              stroke-width="2"
+              stroke="#4C4F5A"
+              d="M18 6L6 18"
+            ></path>
+          </g>
+        </svg>
+      </div>
+      <div class="editor-content">
+        <code class="code">
+          <p><span class="color-0">.code-editor </span> <span>{</span></p>
+          <p class="property">
+            <span class="color-2">border-radius</span><span>:</span>
+            <span class="color-1">8px</span>;
+          </p>
+          <span>}</span>
+        </code>
+      </div>
+    </div>
+  </body>
+</html>
